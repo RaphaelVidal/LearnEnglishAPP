@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topo.component.css']
 })
 export class TopoComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
 
+  public Titulo: String = 'Apredendo Inglês'
 }
