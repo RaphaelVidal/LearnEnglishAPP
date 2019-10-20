@@ -1,6 +1,6 @@
-import { Frase } from "../shared/frase.model";
+import { TipoFrase } from "../shared/frase.model";
 
-const FRASES: Frase[] = [
+export const BancoDeFRASES: TipoFrase[] = [
     {fraseEngl:'I like to learn',frasePtBr: 'Eu gosto de aprender'},
     {fraseEngl:'I watch tv',frasePtBr: 'Eu assito tv'},
     {fraseEngl:'How are you?',frasePtBr: 'Como vai vc?'},

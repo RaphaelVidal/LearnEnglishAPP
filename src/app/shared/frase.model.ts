@@ -1,4 +1,4 @@
-export class Frase {
+export class TipoFrase {
     // public fraseEngl: string
     // public frasePtBr: string
 
