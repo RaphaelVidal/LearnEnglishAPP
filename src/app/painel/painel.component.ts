@@ -11,12 +11,14 @@ import { $ } from 'protractor';
 export class PainelComponent implements OnInit {
 
   public varFrase:TipoFrase[] = BancoDeFRASES
+  public varResposta: string
   constructor() { }
 
   ngOnInit() {
   }
 
-  public atualizaResposta():void {
-    console.log('teste');
+  public atualizaResposta(fraseDigitada:Event):void {
+    this.varResposta=(<HTMLInputElement>fraseDigitada.target).value
+    console.log(this.varResposta);
   }
 }
