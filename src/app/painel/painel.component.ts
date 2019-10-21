@@ -19,6 +19,6 @@ export class PainelComponent implements OnInit {
 
   public atualizaResposta(fraseDigitada:Event):void {
     this.varResposta=(<HTMLInputElement>fraseDigitada.target).value
-    console.log(this.varResposta);
+    //console.log(this.varResposta);
   }
 }
