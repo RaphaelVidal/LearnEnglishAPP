@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressoComponent implements OnInit {
 
+  public varProgresso:number = 0
   constructor() { }
 
   ngOnInit() {
