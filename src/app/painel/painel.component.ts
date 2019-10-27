@@ -16,7 +16,7 @@ export class PainelComponent implements OnInit {
   public varResposta: string
   public rodada: number = 0
   public rodadaFrase: TipoFrase
-  public varProgresso: number = 0
+  public varProgressoPainel: number = 0
 
   constructor() {
     this.rodadaFrase = this.varFrase[this.rodada]
@@ -35,10 +35,11 @@ export class PainelComponent implements OnInit {
     // console.log('Verificar Resposta: ', this.varResposta);
     if (this.varResposta == this.rodadaFrase.frasePtBr) {
       alert('A tradução está correta!');
-      this.varProgresso = this.varProgresso + (100 / this.varFrase.length)
-      console.log(this.varProgresso);
+      this.varProgressoPainel = this.varProgressoPainel + (100 / this.varFrase.length)
+      console.log(this.varProgressoPainel);
       this.rodada++
       this.rodadaFrase = this.varFrase[this.rodada]
+      console.log(this.rodadaFrase);
     } else {
       alert('A tradução está errada!');
     }

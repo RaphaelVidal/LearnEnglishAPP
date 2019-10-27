@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-progresso',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressoComponent implements OnInit {
 
-  public varProgresso:number = 0
+ @Input() public varProgresso:number = 0 // recebe valor vindo do painel com a porcetagem de progresso
   constructor() { }
 
   ngOnInit() {
