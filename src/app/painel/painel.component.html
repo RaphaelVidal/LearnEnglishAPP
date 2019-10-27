@@ -15,7 +15,7 @@
                 <h6>Traduza a frase</h6>
                 <p>{{rodadaFrase.fraseEngl}}</p>
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" (input)="atualizaResposta($event)"></textarea>
+                    <textarea class="form-control" rows="3" (input)="atualizaResposta($event)" [value]="varResposta"></textarea>
                 </div>
             </div>
         </div>
