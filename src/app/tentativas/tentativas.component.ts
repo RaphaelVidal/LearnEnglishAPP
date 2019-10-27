@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TipoCoracao } from '../shared/coracao.model';
 
 @Component({
   selector: 'app-tentativas',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TentativasComponent implements OnInit {
 
-public coracaoCheio:String = '/assets/coracao_cheio.png'
-public coracaoVazio:String = '/assets/coracao_vazio.png'
+  public coracaoCheio: String = '/assets/coracao_cheio.png'
+  public coracaoVazio: String = '/assets/coracao_vazio.png'
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+  public vetorCoracao: TipoCoracao[] = [
+    new TipoCoracao(true),
+    new TipoCoracao(true),
+    new TipoCoracao(true)
+  ]; 
+  
+
+constructor() { console.log(this.vetorCoracao);}
+
+ngOnInit() {
+}
 
 }
