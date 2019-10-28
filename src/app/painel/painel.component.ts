@@ -17,6 +17,7 @@ export class PainelComponent implements OnInit {
   public rodada: number = 0
   public rodadaFrase: TipoFrase
   public varProgressoPainel: number = 0
+  public varTentativas: number = 3
 
   constructor() {
     this.atualizaRodada()
@@ -45,7 +46,12 @@ export class PainelComponent implements OnInit {
       this.atualizaRodada()
     } else {
       alert('A tradução está errada!');
-      
+      this.varTentativas--
+      console.log(this.varTentativas);
+      if (this.varTentativas === -1) {
+        alert('A suas chances acabaram')
+
+      }
     }
 
   }
