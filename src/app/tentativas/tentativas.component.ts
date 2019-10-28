@@ -8,8 +8,8 @@ import { TipoCoracao } from '../shared/coracao.model';
 })
 export class TentativasComponent implements OnInit {
 
-  public coracaoCheio: String = '/assets/coracao_cheio.png'
-  public coracaoVazio: String = '/assets/coracao_vazio.png'
+  // public coracaoCheio: String = '/assets/coracao_cheio.png'
+  // public coracaoVazio: String = '/assets/coracao_vazio.png'
 
 
   public vetorCoracao: TipoCoracao[] = [

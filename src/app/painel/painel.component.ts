@@ -45,6 +45,7 @@ export class PainelComponent implements OnInit {
       this.atualizaRodada()
     } else {
       alert('A tradução está errada!');
+      
     }
 
   }
