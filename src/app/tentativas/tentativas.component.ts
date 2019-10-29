@@ -21,6 +21,10 @@ export class TentativasComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     console.log(this.tentativasComp);
+    if (this.tentativasComp !== this.vetorCoracao.length) {
+      let index:number = this.vetorCoracao.length - this.tentativasComp
+      this.vetorCoracao[index - 1].cheio = false
+    }
   }
 
   ngOnInit() {
