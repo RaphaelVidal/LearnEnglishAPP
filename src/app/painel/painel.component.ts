@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { BancoDeFRASES } from "./frases-mock";
 import { TipoFrase } from "../shared/frase.model";
 import { ProgressoComponent } from "../progresso/progresso.component";
@@ -18,6 +18,7 @@ export class PainelComponent implements OnInit {
   public rodadaFrase: TipoFrase
   public varProgressoPainel: number = 0
   public varTentativas: number = 3
+  @Output('encerrarJogo') public varEncerrarJogo: EventEmitter<string> = new EventEmitter()
 
   constructor() {
     this.atualizaRodada()
@@ -43,13 +44,21 @@ export class PainelComponent implements OnInit {
       alert('A tradução está correta!');
       this.varProgressoPainel = this.varProgressoPainel + (100 / this.varFrase.length)
       this.rodada++
+      if (this.rodada === 4) {
+        this.varEncerrarJogo.emit('Parabéns você ganhou o jogo')
+      }
+
+
       this.atualizaRodada()
+
+
     } else {
       alert('A tradução está errada!');
       this.varTentativas--
-      console.log(this.varTentativas);
+
       if (this.varTentativas === -1) {
-        alert('A suas chances acabaram')
+
+        this.varEncerrarJogo.emit('Infelizmente você perdeu o jogo')
 
       }
     }
