@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -9,8 +9,31 @@
 </head>
 
 <body>
-  <app-topo></app-topo>
-  <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
+  <div class="container">
+    <app-topo></app-topo>
+    <div *ngIf="jogoEmAndamento; else fimDeJogo">
+      <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
+    </div>
+
+    <ng-template #fimDeJogo *ngIf="tipoEncerramento === 'derrota';else fimDeJogoVitoria">
+      <div class="card w-75 m-3 justify-content-end">
+        <div class="card-body">
+          <h5 class="card-title">Você perdeu!</h5>
+          <p class="card-text">Para jogar novamente clique no botão.</p>
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #fimDeJogoVitoria>
+      <div class="card w-75 m-3 justify-content-end">
+        <div class="card-body">
+          <h5 class="card-title">Você Venceu!</h5>
+          <p class="card-text">Para jogar novamente clique no botão.</p>
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+    </ng-template>
+  </div>
 </body>
 
 </html>

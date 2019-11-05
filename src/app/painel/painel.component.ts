@@ -41,11 +41,11 @@ export class PainelComponent implements OnInit {
   public verificaResposta(): void {
 
     if (this.varResposta == this.rodadaFrase.frasePtBr) {
-      alert('A tradução está correta!');
+      //alert('A tradução está correta!');
       this.varProgressoPainel = this.varProgressoPainel + (100 / this.varFrase.length)
       this.rodada++
       if (this.rodada === 4) {
-        this.varEncerrarJogo.emit('Parabéns você ganhou o jogo')
+        this.varEncerrarJogo.emit('vitoria')
       }
 
 
@@ -53,12 +53,12 @@ export class PainelComponent implements OnInit {
 
 
     } else {
-      alert('A tradução está errada!');
+      //alert('A tradução está errada!');
       this.varTentativas--
 
       if (this.varTentativas === -1) {
 
-        this.varEncerrarJogo.emit('Infelizmente você perdeu o jogo')
+        this.varEncerrarJogo.emit('derrota')
 
       }
     }
