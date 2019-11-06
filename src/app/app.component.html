@@ -15,21 +15,31 @@
       <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
     </div>
 
-    <ng-template #fimDeJogo *ngIf="tipoEncerramento === 'derrota';else fimDeJogoVitoria">
-      <div class="card w-75 m-3 justify-content-end">
-        <div class="card-body">
-          <h5 class="card-title">Você perdeu!</h5>
-          <p class="card-text">Para jogar novamente clique no botão.</p>
-          <a href="#" class="btn btn-primary">Button</a>
+    <ng-template #fimDeJogo>
+
+      <div class="row">
+        <div class="col pt-5 d-flex justify-content-center">
+          <div *ngIf="tipoEncerramento === 'derrota';else fimDeJogoVitoria">
+            <h5 class="text-center">Você perdeu!</h5>
+            <img src="/assets/lose.png" alt="" style="width: 18rem;">
+
+          </div>
         </div>
       </div>
+      <div class="row pt-5">
+        <div class="col text-center">
+          <button class="btn btn-primary" (click)="reiniciar()"> Jogar Novamente</button>
+        </div>
+      </div>
+
     </ng-template>
     <ng-template #fimDeJogoVitoria>
-      <div class="card w-75 m-3 justify-content-end">
-        <div class="card-body">
-          <h5 class="card-title">Você Venceu!</h5>
-          <p class="card-text">Para jogar novamente clique no botão.</p>
-          <a href="#" class="btn btn-primary">Button</a>
+      <div class="row">
+        <div class="col pt-5 d-flex justify-content-center">
+          <div>
+            <h5 class="text-center">Você ganhou!</h5>
+            <img src="/assets/win.png" alt="" style="width: 18rem;">
+          </div>
         </div>
       </div>
     </ng-template>
