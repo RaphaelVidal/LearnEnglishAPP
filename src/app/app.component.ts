@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,15 @@ export class AppComponent {
 
   public jogoEmAndamento: boolean = true
   public tipoEncerramento: string
+ 
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.keyCode == 13) {//presionar o enter para verificar
+      this.reiniciar()
+    }
+  }
 
   public encerrarJogo(tipo: string): void {
-    console.log(tipo);
     this.jogoEmAndamento = false
     this.tipoEncerramento = tipo
   }
