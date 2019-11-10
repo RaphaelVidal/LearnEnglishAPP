@@ -35,6 +35,10 @@ export class PainelComponent implements OnInit {
   }
 
   
+  public infoEnter() {
+    alert('hover')
+  }
+
   public atualizaRodada() {
     this.rodadaFrase = this.varFrase[this.rodada]
     this.varResposta = '' //limpa resposta da tela
