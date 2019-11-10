@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, HostListener } from '@angular/core';
 import { BancoDeFRASES } from "./frases-mock";
 import { TipoFrase } from "../shared/frase.model";
 import { ProgressoComponent } from "../progresso/progresso.component";
@@ -27,7 +27,14 @@ export class PainelComponent implements OnInit {
   ngOnInit() {
   }
 
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.keyCode == 13) {//presionar o enter para verificar
+      this.verificaResposta()
+    }
+  }
 
+  
   public atualizaRodada() {
     this.rodadaFrase = this.varFrase[this.rodada]
     this.varResposta = '' //limpa resposta da tela
@@ -41,7 +48,7 @@ export class PainelComponent implements OnInit {
   public verificaResposta(): void {
 
     if (this.varResposta == this.rodadaFrase.frasePtBr) {
-      //alert('A tradução está correta!');
+      alert('A tradução está correta!');
       this.varProgressoPainel = this.varProgressoPainel + (100 / this.varFrase.length)
       this.rodada++
       if (this.rodada === 4) {
