@@ -47,7 +47,7 @@ export class PainelComponent implements OnInit {
 
   public verificaResposta(): void {
 
-    if (this.varResposta == this.rodadaFrase.frasePtBr) {
+    if (this.varResposta.trim() == this.rodadaFrase.frasePtBr.trim()) {
       alert('A tradução está correta!');
       this.varProgressoPainel = this.varProgressoPainel + (100 / this.varFrase.length)
       this.rodada++
