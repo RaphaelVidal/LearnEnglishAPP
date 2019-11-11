@@ -8,6 +8,7 @@ import { PainelComponent } from './painel/painel.component';
 import { ProgressoComponent } from './progresso/progresso.component';
 import { TentativasComponent } from './tentativas/tentativas.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFontAwesomeModule,
     NgbModule
   ],
   providers: [],
