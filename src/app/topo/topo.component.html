@@ -1,10 +1,15 @@
 <div class="container">
   <nav class="navbar navbar-light">
-    <span class="navbar-brand text-light mb-0 h1">{{Titulo}}</span>
-    <span class="text-light font-italic">{{Versao}}v</span>
-    <button type="button" class="btn btn-success mr-2" placement="right"
-      ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right">
-      <i class="fa fa-info-circle"></i>
-    </button>
+    <div class="col col-2">
+      <span class="navbar-brand text-light mb-0 h1">{{Titulo}}
+      </span>
+    </div>
+    <div class="col col-8">
+      <i class="fa fa-info-circle pl-2 text-light" placement="bottom" popoverTitle="Pop"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."></i>
+    </div>
+    <div class="col col-2">
+      <span class="text-light font-italic">{{Versao}}v</span>
+    </div>
   </nav>
 </div>
