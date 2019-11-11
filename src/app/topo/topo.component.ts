@@ -12,5 +12,5 @@ export class TopoComponent implements OnInit {
   }
 
   public Versao:string = "0.1"
-  public Titulo: String = 'Apredendo Inglês'
+  public Titulo: String = 'Aprendendo Inglês'
 }

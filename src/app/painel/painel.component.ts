@@ -5,6 +5,7 @@ import { ProgressoComponent } from "../progresso/progresso.component";
 import { $ } from 'protractor';
 import { timingSafeEqual } from 'crypto';
 
+
 @Component({
   selector: 'app-painel',
   templateUrl: './painel.component.html',
@@ -12,6 +13,7 @@ import { timingSafeEqual } from 'crypto';
 })
 export class PainelComponent implements OnInit {
 
+  
   public varFrase: TipoFrase[] = BancoDeFRASES
   public varResposta: string = ''
   public rodada: number = 0
@@ -20,6 +22,7 @@ export class PainelComponent implements OnInit {
   public varTentativas: number = 3
   @Output('encerrarJogo') public varEncerrarJogo: EventEmitter<string> = new EventEmitter()
 
+  
   constructor() {
     this.atualizaRodada()
   }
@@ -35,9 +38,9 @@ export class PainelComponent implements OnInit {
   }
 
   
-  public infoEnter() {
-    alert('hover')
-  }
+  // public infoEnter() {
+  //   alert('hover')
+  // }
 
   public atualizaRodada() {
     this.rodadaFrase = this.varFrase[this.rodada]

@@ -10,6 +10,8 @@ export class AppComponent {
   public jogoEmAndamento: boolean = true
   public tipoEncerramento: string
  
+
+  
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.keyCode == 13) {//presionar o enter para verificar

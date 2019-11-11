@@ -15,14 +15,16 @@
                 <h6>Traduza a frase</h6>
                 <p>{{rodadaFrase.fraseEngl}}</p>
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" (input)="atualizaResposta($event)" [value]="varResposta"></textarea>
+                    <textarea class="form-control" rows="3" (input)="atualizaResposta($event)"
+                        [value]="varResposta"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <button id="ph" type="button" class="btn btn-primary" (click)="verificaResposta()" on-mouseover="infoEnter()">Verificar</button>
+                    <button id="ph" type="button" class="btn btn-primary" (click)="verificaResposta()"
+                       >Verificar</button>
                 </div>
 
             </div>
